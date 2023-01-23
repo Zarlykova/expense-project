@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import './App.css';
+import styled from 'styled-components';
 import  Expenses  from './components/expenses/Expenses';
 import ExpensesFilter from './components/ExpensesFilter/ExpensesFilter';
 import { NewExpenses } from './components/new-expenses/NewExpenses';
@@ -87,15 +87,20 @@ return (
 
 
   return (
-    <div className="App">
+    <Div >
      
       <NewExpenses onNewExpensesAdd ={onNewExpensesAdd}/> 
       <ExpensesFilter value={selectedYear} onChange={yearChangeHandler} />
        <Chart items={filteredItems}/>
       <Expenses  expenses={filteredItems}></Expenses>
     
-    </div>
+    </Div>
   );
 }
 
 export default App;
+
+
+const Div = styled.div`
+text-align: center;
+`

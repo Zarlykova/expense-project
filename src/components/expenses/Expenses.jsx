@@ -1,9 +1,9 @@
 import { ExpenseItem } from "../expense-item/ExpenseItem"
-import "./Expenses.css"
+import styled from "styled-components"
 
  const Expenses = ({expenses}) => {
  return (
-  <ul className="expenses-list">
+  <Ul >
   {
    expenses.map((elem, index) => {
     return(
@@ -15,8 +15,16 @@ import "./Expenses.css"
     />
     )})
   }
-  </ul>
+  </Ul>
  )
 }
 
 export default Expenses;
+
+const Ul = styled.ul`
+   width: 790px;
+ margin: 30px auto;
+ padding: 20px;
+ background-color: #444343
+
+`

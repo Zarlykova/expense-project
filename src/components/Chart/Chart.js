@@ -1,5 +1,5 @@
 import ChartBar from "./ChartBar"
-import "./Chart.css"
+import styled from "styled-components";
 
 const Chart = ({items}) =>{
     const maximumPrice = 2000;
@@ -62,7 +62,7 @@ items.forEach((item) => {
 });
 
 return(
-    <div className="chart">
+    <ChartContainer >
         {month.map((item)=>{
             return(
                  <ChartBar key={item.label} label={item.label} currentPrice={item.currentPrice} maximumPrice={maximumPrice}/>
@@ -70,7 +70,19 @@ return(
 
         })}
        
-    </div>
+    </ChartContainer>
 )
 }
 export default Chart;
+
+const ChartContainer = styled.div`
+padding: 1rem;
+    border-radius: 12px;
+    background-color: #f8dfff;
+    text-align: center;
+    display:flex;
+    justify-content:space-around;
+    height: 10rem;
+    width: 780px;
+    margin: 0 auto;
+`

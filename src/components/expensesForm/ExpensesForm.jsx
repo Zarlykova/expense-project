@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { Button } from "../UI/Button/Button"
 import { InputForm } from "../UI/InputForm/InputForm"
-import "./ExpensesForm.css"
+import styled from "styled-components"
 
 
 export const ExpensesForm = (props) => {
@@ -41,7 +41,7 @@ props.onNewExpensesAdd(expenseData)
 
 return(
   <div>
- <form className="expense-forms">
+ <ExpenseForm >
 
 
    <InputForm 
@@ -71,11 +71,25 @@ return(
    onChange={dateInputChangeHandler}
    />
  
- </form>
- <div className="buttons">
+ </ExpenseForm>
+ <Buttons >
   <Button onClick={cancelHandler}>Отмена</Button>
   <Button onClick={saveHandler}>Добавить расходы</Button>
-    </div>
+    </Buttons>
  </div>
 )
 }
+
+const ExpenseForm = styled.form`
+  display: flex;
+ /* justify-content: space-between; */
+ flex-wrap: wrap;
+ margin: 40px auto;
+ width: 100%;
+
+`
+
+const Buttons = styled.div`
+  display: flex;
+ justify-content: flex-end;
+`
